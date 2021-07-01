@@ -267,7 +267,7 @@ namespace COMPLETE_FLAT_UI
                string query = ("select f.id_Factura, f.Fecha,f.Subtotal,Total,c.Nombre,c.Direccion,s.Servicio,df.Descripcion,df.Fecha_servicio,df.Precio from facturas f inner join detalle_factura df on f.id_Factura = df.id_Factura inner join Clientes c on c.id_Cliente = f.id_Cliente inner join Servicios s on s.id_Servicio = df.id_Servicio where f.id_Factura = " + txtFactura.Text + "");
 
                DataTable dtFactura = con.SelectDataTable(query);
-               Framework.CrystalReports.Report reportCR = new Framework.CrystalReports.Report("ALDO\\SQL2019", "FVMLandScaping", "sa", "chaman", "C:\\Users\\aldo0\\Desktop\\Proyecto\\COMPLETE_FLAT_UI\\Reportes\\", "rptFactura.rpt");
+               Framework.CrystalReports.Report reportCR = new Framework.CrystalReports.Report("ALDO\\SQL2014", "FVMLandScaping", "sa", "chaman", "C:\\Users\\aldo0\\Desktop\\Proyecto\\COMPLETE_FLAT_UI\\Reportes\\", "rptFactura.rpt");
                reportCR.AddFormula("id_factura", txtFactura.Text);
                reportCR.AddTable("Temporal", dtFactura);
                reportCR.FormatType = FormatType.PDF;
