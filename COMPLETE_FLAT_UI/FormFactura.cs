@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using COMPLETE_FLAT_UI.Reportes;
 using Framework.CrystalReports;
+using System.IO;
 
 namespace COMPLETE_FLAT_UI
 {
@@ -266,16 +267,14 @@ namespace COMPLETE_FLAT_UI
                string query = ("select f.id_Factura, f.Fecha,f.Subtotal,Total,c.Nombre,c.Direccion,s.Servicio,df.Descripcion,df.Fecha_servicio,df.Precio from facturas f inner join detalle_factura df on f.id_Factura = df.id_Factura inner join Clientes c on c.id_Cliente = f.id_Cliente inner join Servicios s on s.id_Servicio = df.id_Servicio where f.id_Factura = " + txtFactura.Text + "");
 
                DataTable dtFactura = con.SelectDataTable(query);
-
-
                Framework.CrystalReports.Report reportCR = new Framework.CrystalReports.Report("ALDO\\SQL2019", "FVMLandScaping", "sa", "chaman", "C:\\Users\\aldo0\\Desktop\\Proyecto\\COMPLETE_FLAT_UI\\Reportes\\", "rptFactura.rpt");
                reportCR.AddFormula("id_factura", txtFactura.Text);
-               reportCR.AddTable("Mensaje", dtFactura);
+               reportCR.AddTable("Temporal", dtFactura);
                reportCR.FormatType = FormatType.PDF;
                buffer = reportCR.Start();
-
-                            
-                    //IO.File.WriteAllBytes(Me.Cs_RutaTmp & Me.Cs_ReporteNombreArchivoSalida, Lab_Archivo)
+               string Ruta = "C:\\Facturas\\";
+               string ReporteNombreArchivoSalida = "Factura_" + txtFactura.Text + "_" + DateTime.Now.ToString("yyyyMMddmmss") + ".pdf";
+               File.WriteAllBytes(Ruta + ReporteNombreArchivoSalida, buffer);
           }
 
           private void btnQuitar_Click(object sender, EventArgs e)

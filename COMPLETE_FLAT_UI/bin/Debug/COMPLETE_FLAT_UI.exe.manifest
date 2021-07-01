@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COMPLETE_FLAT_UI.exe" size="936448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="COMPLETE_FLAT_UI.exe" size="940544">
       <assemblyIdentity name="COMPLETE_FLAT_UI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9Pu8/XxGOcgZCx0pFTyDeQhCjoTbPioet/JRwcYBuS4=</dsig:DigestValue>
+        <dsig:DigestValue>kKXPsZJknYiI5wdD8papZNdOyL1GaooQracmPUd+wDQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -265,7 +265,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FM+BtmLb0rLqvlN6/BptvY3xfeJiM4Tq/oBvKeTOFe0=</dsig:DigestValue>
+        <dsig:DigestValue>hyiZf3lBvvmuA09hzuZkCUaJI3ZLnIMwunAT3xLbM0g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
